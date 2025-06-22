@@ -3,6 +3,7 @@ import "./index.css";
 import Header from "./components/Header";
 import Instruction from "./components/instruction";
 import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 function App() {
   const [showInstructions, setShowInstructions] = useState(false);
@@ -16,16 +17,7 @@ function App() {
       <Header showInstructions={showInstructions} toggleInstructions={toggleInstructions}/>
       <Instruction showInstructions={showInstructions}/>
       <Main />
-      
-
-      <footer className="app-footer">
-        <p>© 2024 UI Component Library. All rights reserved.</p>
-        <div className="technologies-used">
-          <strong>Technologies used:</strong> React, JSX, useState, Conditional
-          Rendering, CSS Modules, Event Handling, Component Composition,
-          Reusable Components.
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

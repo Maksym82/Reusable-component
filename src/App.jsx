@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./index.css";
+import Header from "./components/Header";
 
 const downloadButtonFile = () => {
   const code = `
@@ -57,25 +58,14 @@ function App() {
 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>UI Component Library</h1>
-        <p>Explore reusable and customizable components</p>
-        <div className="header-buttons">
-          <button className="accordion-button" onClick={toggleInstructions}>
-            {showInstructions ? "Hide Instructions" : "Show Instructions"}
-          </button>
-          <button onClick={downloadButtonFile} className="download-button">
-            Download Button.js
-          </button>
-        </div>
-      </header>
-
+      <Header showInstructions={showInstructions} toggleInstructions={toggleInstructions}/>
       <div className={`app-instructions ${showInstructions ? "open" : ""}`}>
         <h3>How to Use</h3>
         <p>To use these components in your project:</p>
         <ol>
           <li>
-            Import the component: <code>{`import Button from './Button';`}</code>
+            Import the component:{" "}
+            <code>{`import Button from './Button';`}</code>
           </li>
           <li>Customize the component using the following props:</li>
         </ol>
@@ -108,8 +98,9 @@ function App() {
                 <code>&quot;medium&quot;</code>
               </td>
               <td>
-                Size of the button: <code>&quot;small&quot;</code>, <code>&quot;medium&quot;</code>,
-                or <code>&quot;large&quot;</code>.
+                Size of the button: <code>&quot;small&quot;</code>,{" "}
+                <code>&quot;medium&quot;</code>, or{" "}
+                <code>&quot;large&quot;</code>.
               </td>
             </tr>
             <tr>
@@ -122,8 +113,10 @@ function App() {
               </td>
               <td>
                 Style of the button: <code>&quot;primary&quot;</code>,{" "}
-                <code>&quot;secondary&quot;</code>, <code>&quot;danger&quot;</code>,{" "}
-                <code>&quot;outline&quot;</code>, or <code>&quot;gradient&quot;</code>.
+                <code>&quot;secondary&quot;</code>,{" "}
+                <code>&quot;danger&quot;</code>,{" "}
+                <code>&quot;outline&quot;</code>, or{" "}
+                <code>&quot;gradient&quot;</code>.
               </td>
             </tr>
             <tr>
@@ -147,7 +140,8 @@ function App() {
                 <code>false</code>
               </td>
               <td>
-                Makes the button stretch to fill its container if set to <code>true</code>.
+                Makes the button stretch to fill its container if set to{" "}
+                <code>true</code>.
               </td>
             </tr>
             <tr>
@@ -163,7 +157,8 @@ function App() {
           </tbody>
         </table>
         <p>
-          Example usage: <code>{`<Button size="large" variant="gradient">Click Me</Button>`}</code>
+          Example usage:{" "}
+          <code>{`<Button size="large" variant="gradient">Click Me</Button>`}</code>
         </p>
       </div>
 
@@ -207,12 +202,14 @@ function App() {
       <footer className="app-footer">
         <p>© 2024 UI Component Library. All rights reserved.</p>
         <div className="technologies-used">
-          <strong>Technologies used:</strong> React, JSX, useState, Conditional Rendering, CSS
-          Modules, Event Handling, Component Composition, Reusable Components.
+          <strong>Technologies used:</strong> React, JSX, useState, Conditional
+          Rendering, CSS Modules, Event Handling, Component Composition,
+          Reusable Components.
         </div>
       </footer>
     </div>
   );
 }
+
 
 export default App;

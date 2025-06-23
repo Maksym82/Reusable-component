@@ -1,5 +1,5 @@
 export default function Button({
-  text = "Some text",
+  // text = "Some text",
   icon,
   size = "medium",
   variant = "primary",

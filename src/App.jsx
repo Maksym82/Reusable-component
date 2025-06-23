@@ -12,15 +12,18 @@ function App() {
     setShowInstructions((prev) => !prev);
   };
 
+  function handleClick() {
+    alert("Click");
+  }
+
   return (
     <div className="app">
       <Header showInstructions={showInstructions} toggleInstructions={toggleInstructions}/>
       <Instruction showInstructions={showInstructions}/>
-      <Main />
+      <Main handleClick={handleClick}/>
       <Footer />
     </div>
   );
-}
-
+} 
 
 export default App;

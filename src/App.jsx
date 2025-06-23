@@ -20,31 +20,39 @@ function App() {
 
   return (
     <div className="app">
-      <Header showInstructions={showInstructions} toggleInstructions={toggleInstructions}/>
-      <Instruction showInstructions={showInstructions}/>
+      <Header
+        showInstructions={showInstructions}
+        toggleInstructions={toggleInstructions}
+      />
+      <Instruction showInstructions={showInstructions} />
       <Main>
-        <Section></Section>
-        <Section>
-          <Button onClick={handleClick} isDisabled>Some Text</Button>
-          <Button onClick={handleClick} fullWidth>Some Text 2</Button>
-          <Button variant="secondary">Some Text 3</Button>
-          <Button variant="secondary" size="large">Some Text 4</Button>
+        <Section title="Variants">
+          <Button variant="primary">Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="danger">Danger</Button>
+          <Button variant="gradient">Gradient</Button>
+          <Button variant="outline">Outline</Button>
         </Section>
-        <Section>
-        <Button></Button>
-        <Button></Button>
-        <Button></Button>
+
+        <Section title="Sizes">
+          <Button variant="primary" size="large">Large</Button>
+          <Button variant="primary" size="medium">Medium</Button>
+          <Button variant="primary" size="small">Small</Button>
         </Section>
-        <Section>
-          <Button></Button>
-          <Button></Button>
-          <Button></Button>
-          <Button></Button>
+        <Section title="Button state">
+          <Button isDisabled>Disabled</Button>
+          <Button>Default</Button>
+        </Section>
+        <Section title="Full Width Button">
+          <Button fullWidth>Full Width</Button>
+        </Section>
+        <Section title="With Fn">
+          <Button variant="primary" onClick={handleClick}>Click me</Button>
         </Section>
       </Main>
       <Footer />
     </div>
   );
-} 
+}
 
 export default App;
